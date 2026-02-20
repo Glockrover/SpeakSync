@@ -15,13 +15,13 @@ Install the uv package manager:
 
 Bash
 
-# For Windows
-powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
-# For Linux/MacOS
-curl -LsSf https://astral.sh/uv/install.sh | sh
+## For Windows
+`powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"`
+
+## For Linux/MacOS
+`curl -LsSf https://astral.sh/uv/install.sh | sh`
 
 Initialize the project and virtual environment:
-+1
 
 Bash
 
@@ -32,18 +32,23 @@ Install dependencies:
 
 Bash
 
-uv add vision-agents [getstream, openai, ultralytics] python-dotenv
+`uv add vision-agents [getstream, openai, ultralytics] python-dotenv`
+
 Configuration
+
 Create a .env file in the root directory and add your credentials:
 
 Code snippet
 
 STREAM_API_KEY=your-stream-api-key
+
 STREAM_API_SECRET=your-stream-secret
+
 OPENAI_API_KEY=your-openai-api-key
+
 CALL_ID="practice-room"
-🏗️ Project Structure
-Plaintext
+
+###🏗️ Project Structure
 
 Presentation Coach/
 ├── instructions/
@@ -52,23 +57,22 @@ Presentation Coach/
 ├── main.py               # The Central Processing Unit of the app [cite: 190]
 ├── download_yolo_pose.py # Utility to download the YOLO11 model [cite: 138]
 └── pyproject.toml        # Project dependencies [cite: 151]
-🎮 Usage
+
+###🎮 Usage
 Download the Vision Model:
 Run the utility script to fetch the yolo11n-pose.pt model file.
 
 Bash
+`python download_yolo_pose.py`
 
-python download_yolo_pose.py
 Launch the Coach:
 Run the main application. The agent will join the call, greet you, and start monitoring your performance automatically.
-+1
 
 Bash
+`python main.py`
 
-python main.py
-📜 Coaching Philosophy
+###📜 Coaching Philosophy
 The agent's personality is defined in instructions/coach.md. It is designed to be encouraging and focused on specific metrics like pace, clarity, and posture to ensure you stay relaxed yet professional during your practice.
-+2
 
 
 Based on the tutorial by Timothy Olanrewaju via freeCodeCamp.
